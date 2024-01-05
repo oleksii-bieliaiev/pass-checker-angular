@@ -26,10 +26,8 @@ export class AppComponent {
       return 'strong';
     } else if (this.password.length >= 8 && ((hasLetters && hasDigits) || (hasLetters && hasSymbols) || (hasDigits && hasSymbols))) {
       return 'medium';
-    } else if (this.password.length >= 8 && (hasLetters || hasSymbols || hasDigits)) {
-      return 'easy';
     } else {
-      return 'weak';
+      return 'easy';
     }
   }
 }
