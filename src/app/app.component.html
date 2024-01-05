@@ -6,14 +6,14 @@
 <div class="sections">
   <div class="sections_item" [ngClass]="{
   'gray': password.length === 0,
-  'red': 8 > password.length && password.length >= 1 || 'easy' && password.length >= 8 ,
+  'red': 8 > password.length && password.length >= 1 || passwordStrength === 'easy' && password.length >= 8 ,
   'yellow': passwordStrength === 'medium' && password.length >= 8,
   'green': passwordStrength === 'strong' && password.length >= 8
 }">
   </div>
 
   <div class="sections_item" [ngClass]="{
-  'gray': password.length === 0 || 'easy' && password.length >= 8,
+  'gray': password.length === 0 || passwordStrength === 'easy' && password.length >= 8,
   'red': 8 > password.length && password.length >= 1,
   'yellow': passwordStrength === 'medium' && password.length >= 8,
   'green': passwordStrength === 'strong' && password.length >= 8
@@ -21,7 +21,7 @@
   </div>
 
   <div class="sections_item" [ngClass]="{
-  'gray': password.length === 0 || 'easy' && password.length >= 8 || passwordStrength === 'medium' && password.length >= 8,
+  'gray': password.length === 0 || passwordStrength === 'easy' && password.length >= 8 || passwordStrength === 'medium' && password.length >= 8,
   'red': 8 > password.length && password.length >= 1,
   'green': passwordStrength === 'strong' && password.length >= 8
 }">
